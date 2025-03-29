@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8faff;
+      color: #1e1e2f;
+      line-height: 1.6;
+    }
+    header, section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #2e2e3f;
+    }
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: #1e60f3;
+      position: relative;
+      z-index: 2;
+    }
+    p.subtitulo {
+      text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+      color: #5a5a6e;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+    .button {
+      display: block;
+      margin: 20px auto;
+      background-color: #1e60f3;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .button:hover {
+      background-color: #174dcc;
+    }
+    .images {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 10px;
+    }
+    .images img {
+      width: 180px;
+      height: auto;
+    }
+    .texto-baixo {
+      color: #6b6b80;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 10px;
+    }
+    section#sobre, section#contato {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      margin-top: 40px;
+      padding: 40px 20px;
+    }
+    section#tecnologias {
+      position: relative;
+      margin-top: 80px;
+      min-height: 600px;
+    }
+    .neon-line {
+      position: absolute;
+      left: 50%;
+      top: 60px;
+      width: 4px;
+      height: 0;
+      background: #00f0ff;
+      transition: height 0.3s ease-out;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    .tech-grid {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .tech-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tech-item.left {
+      justify-content: flex-start;
+    }
+    .tech-item.right {
+      justify-content: flex-end;
+    }
+    .tech-item img {
+      width: 64px;
+      height: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.6s forwards;
+    }
+    .tech-item:nth-child(1) img { animation-delay: 0.1s; }
+    .tech-item:nth-child(2) img { animation-delay: 0.3s; }
+    .tech-item:nth-child(3) img { animation-delay: 0.5s; }
+    .tech-item:nth-child(4) img { animation-delay: 0.7s; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    form input, form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+    form button {
+      background-color: #1e60f3;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bem-vindo ao meu portfólio</h1>
+    <p class="subtitulo">Aqui você conhece mais sobre mim, meus projetos e as tecnologias que domino</p>
+    <button class="button">Meus Projetos</button>
+    <div class="texto-baixo">400k+ users around the world</div>
+  </header>
+
+  <section class="images">
+    <img src="https://i.imgur.com/NnY1s92.png" alt="AI Graphic">
+    <img src="https://i.imgur.com/8aK5ukM.png" alt="Processor Graphic">
+    <img src="https://i.imgur.com/ZrRk9bi.png" alt="Tech Illustration">
+    <img src="https://i.imgur.com/FVaUKgf.png" alt="Computer Graphic">
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Sou desenvolvedor front-end em formação, apaixonado por tecnologia, interfaces futuristas e experiências digitais modernas. Este portfólio foi criado para demonstrar minhas habilidades e projetos pessoais.</p>
+  </section>
+
+  <section id="tecnologias">
+    <h2>Tecnologias e Ferramentas</h2>
+    <div class="neon-line" id="neonLine"></div>
+    <div class="tech-grid">
+      <div class="tech-item left">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+      </div>
+      <div class="tech-item right">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+      </div>
+      <div class="tech-item left">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+      </div>
+      <div class="tech-item right">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required>
+      <input type="email" placeholder="Seu e-mail" required>
+      <textarea rows="5" placeholder="Sua mensagem..."></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <script>
+    const neonLine = document.getElementById('neonLine');
+    window.addEventListener('scroll', () => {
+      const section = document.getElementById('tecnologias');
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const scrollY = window.scrollY + window.innerHeight;
+      const progress = Math.min(1, Math.max(0, (scrollY - sectionTop) / sectionHeight));
+      neonLine.style.height = progress * sectionHeight + 'px';
+    });
+  </script>
+</body>
+</html>

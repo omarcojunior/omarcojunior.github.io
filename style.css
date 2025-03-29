@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8;  /* Cor neutra */
+  color: #333; /* Cor do texto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  background-color: #0a1f44;  /* Azul escuro */
+  color: #fff;
+  padding: 60px 20px;
+  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.5em;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: #00c4ff;  /* Azul claro */
+  color: #fff;
+  padding: 15px 35px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 250px;
+}
+
+button:hover {
+  background-color: #0081b3;  /* Azul mais escuro */
+}
+
+#sobre-mim, #meus-projetos {
+  margin: 50px 0;
+  text-align: center;
+  width: 80%;
+  max-width: 1000px;
+}
+
+#sobre-mim h2, #meus-projetos h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #0a1f44; /* Azul escuro */
+}
+
+.projeto {
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  text-align: center;
+}
+
+.projeto h3 {
+  font-size: 1.8em;
+  color: #00c4ff; /* Azul claro */
+}
+
+footer {
+  background-color: #0a1f44;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+footer p {
+  font-size: 1em;
+}
