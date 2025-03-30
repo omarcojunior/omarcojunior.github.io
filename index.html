@@ -1,225 +1,191 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f8faff;
-      color: #1e1e2f;
-      line-height: 1.6;
-    }
-    header, section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #2e2e3f;
-    }
-    h1 {
-      font-size: 3rem;
-      text-align: center;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2rem;
-      color: #1e60f3;
-      position: relative;
-      z-index: 2;
-    }
-    p.subtitulo {
-      text-align: center;
-      font-family: 'Courier New', Courier, monospace;
-      color: #5a5a6e;
-      font-size: 1rem;
-      margin-bottom: 30px;
-    }
-    .button {
-      display: block;
-      margin: 20px auto;
-      background-color: #1e60f3;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .button:hover {
-      background-color: #174dcc;
-    }
-    .images {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 40px 10px;
-    }
-    .images img {
-      width: 180px;
-      height: auto;
-    }
-    .texto-baixo {
-      color: #6b6b80;
-      font-size: 0.9rem;
-      text-align: center;
-      margin-top: 10px;
-    }
-    section#sobre, section#contato {
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      margin-top: 40px;
-      padding: 40px 20px;
-    }
-    section#tecnologias {
-      position: relative;
-      margin-top: 80px;
-      min-height: 600px;
-    }
-    .neon-line {
-      position: absolute;
-      left: 50%;
-      top: 60px;
-      width: 4px;
-      height: 0;
-      background: #00f0ff;
-      transition: height 0.3s ease-out;
-      transform: translateX(-50%);
-      z-index: 1;
-    }
-    .tech-grid {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      margin-top: 20px;
-    }
-    .tech-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .tech-item.left {
-      justify-content: flex-start;
-    }
-    .tech-item.right {
-      justify-content: flex-end;
-    }
-    .tech-item img {
-      width: 64px;
-      height: auto;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeUp 0.6s forwards;
-    }
-    .tech-item:nth-child(1) img { animation-delay: 0.1s; }
-    .tech-item:nth-child(2) img { animation-delay: 0.3s; }
-    .tech-item:nth-child(3) img { animation-delay: 0.5s; }
-    .tech-item:nth-child(4) img { animation-delay: 0.7s; }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      max-width: 500px;
-      margin: auto;
-    }
-    form input, form textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-family: 'Inter', sans-serif;
-    }
-    form button {
-      background-color: #1e60f3;
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>omarcojunior.dev</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Bem-vindo ao meu portfólio</h1>
-    <p class="subtitulo">Aqui você conhece mais sobre mim, meus projetos e as tecnologias que domino</p>
-    <button class="button">Meus Projetos</button>
-    <div class="texto-baixo">400k+ users around the world</div>
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Seja bem-vindo 👋</h1>
+      <p>Sou Marco Junior, desenvolvedor front-end focado em criar interfaces modernas e responsivas.</p>
+      <a href="#projetos" class="btn neon-btn">Veja meus projetos</a>
+    </div>
   </header>
 
-  <section class="images">
-    <img src="https://i.imgur.com/NnY1s92.png" alt="AI Graphic">
-    <img src="https://i.imgur.com/8aK5ukM.png" alt="Processor Graphic">
-    <img src="https://i.imgur.com/ZrRk9bi.png" alt="Tech Illustration">
-    <img src="https://i.imgur.com/FVaUKgf.png" alt="Computer Graphic">
-  </section>
-
-  <section id="sobre">
+  <!-- SEÇÃO SOBRE MIM -->
+  <section id="sobre" class="sobre">
     <h2>Sobre Mim</h2>
-    <p>Sou desenvolvedor front-end em formação, apaixonado por tecnologia, interfaces futuristas e experiências digitais modernas. Este portfólio foi criado para demonstrar minhas habilidades e projetos pessoais.</p>
-  </section>
-
-  <section id="tecnologias">
-    <h2>Tecnologias e Ferramentas</h2>
-    <div class="neon-line" id="neonLine"></div>
-    <div class="tech-grid">
-      <div class="tech-item left">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+    <div class="sobre-conteudo-wrapper">
+      <div class="sobre-foto scroll-fade-left">
+        <img src="assets/perfil.jpg" alt="Foto de Marco Junior" />
       </div>
-      <div class="tech-item right">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
-      </div>
-      <div class="tech-item left">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-      </div>
-      <div class="tech-item right">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+      <div class="sobre-conteudo scroll-fade-right">
+        <p>Me chamo Marco Junior, sou desenvolvedor front-end apaixonado por tecnologia, interfaces modernas e soluções criativas.</p>
+        <p>Curioso por natureza, estou sempre buscando novas formas de transformar ideias em experiências digitais intuitivas e impactantes. Minha formação e projetos pessoais me levaram a dominar HTML, CSS e JavaScript, com foco total em usabilidade e performance.</p>
+        <p>Além do código, gosto de aprender, ensinar e colaborar com outros devs. Meu objetivo é evoluir constantemente e construir produtos que realmente façam a diferença.</p>
+        <p>Explore meus projetos e sinta-se à vontade para entrar em contato comigo!</p>
       </div>
     </div>
   </section>
 
-  <section id="contato">
-    <h2>Contato</h2>
-    <form>
-      <input type="text" placeholder="Seu nome" required>
-      <input type="email" placeholder="Seu e-mail" required>
-      <textarea rows="5" placeholder="Sua mensagem..."></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+  <!-- SEÇÃO TECNOLOGIAS -->
+<!-- SEÇÃO TECNOLOGIAS E FERRAMENTAS -->
+<section id="tecnologias" class="tecnologias" style="text-align: center; padding-top: 80px;">
+  <h2>Tecnologias e Ferramentas</h2>
 
-  <script>
-    const neonLine = document.getElementById('neonLine');
-    window.addEventListener('scroll', () => {
-      const section = document.getElementById('tecnologias');
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const scrollY = window.scrollY + window.innerHeight;
-      const progress = Math.min(1, Math.max(0, (scrollY - sectionTop) / sectionHeight));
-      neonLine.style.height = progress * sectionHeight + 'px';
+  <h3 class="subtitulo">Linguagens</h3>
+  <div class="tecnologias-grid small">
+    <div class="tech-card scroll-fade-up">
+      <img src="assets/icons/html5.png" alt="HTML5" />
+    </div>
+    <div class="tech-card scroll-fade-up">
+      <img src="assets/icons/css.png" alt="CSS3" />
+    </div>
+    <div class="tech-card scroll-fade-up">
+      <img src="assets/icons/js.png" alt="JavaScript" />
+    </div>
+  </div>
+
+  <h3 class="subtitulo">Atendimento / CRM</h3>
+  <div class="tecnologias-grid small">
+    <div class="tech-card scroll-fade-up">
+      <img src="assets/icons/intercom.png" alt="Intercom" />
+    </div>
+    <div class="tech-card scroll-fade-up">
+      <img src="assets/icons/octadesk.png" alt="Octadesk" />
+    </div>
+    <div class="tech-card scroll-fade-up">
+      <img src="assets/icons/zendesk.png" alt="Zendesk" />
+    </div>
+  </div>
+
+  <h3 class="subtitulo">Ferramentas de Desenvolvimento</h3>
+  <div class="tecnologias-grid small">
+    <div class="tech-card scroll-fade-up">
+      <img src="assets/icons/jira.png" alt="Jira" />
+    </div>
+    <div class="tech-card scroll-fade-up">
+      <img src="assets/icons/selenium.png" alt="Selenium" />
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO ESTUDANDO ATUALMENTE -->
+<div style="height: 80px; background: #f9fafc;"></div>
+<section id="estudos" class="tecnologias estudos-section" style="text-align: center; padding-top: 100px; background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef); color: #fff;">
+  <h2>Estudando Atualmente</h2>
+  <p style="max-width: 700px; margin: 20px auto; font-size: 1.1rem; color: #e0e0e0;">
+    Estou constantemente buscando evoluir minhas habilidades como desenvolvedor e profissional de tecnologia. No momento, estou aprofundando meus conhecimentos em plataformas de automação, desenvolvimento de interfaces modernas e soluções sem código. Meu foco é unir eficiência com velocidade na entrega de projetos reais.
+  </p>
+
+  <div class="tecnologias-grid small estudos-animado">
+    <div class="tech-card scroll-slide-left">
+      <img src="assets/icons/servicenow.png" alt="ServiceNow" />
+    </div>
+    <div class="tech-card scroll-slide-left">
+      <img src="assets/icons/flutterflow.png" alt="FlutterFlow" />
+    </div>
+    <div class="tech-card scroll-slide-left">
+      <img src="assets/icons/nocode.png" alt="No Code" />
+    </div>
+    <div class="tech-card scroll-slide-left">
+      <img src="assets/icons/lowcode.png" alt="Low Code" />
+    </div>
+  </div>
+
+  <div class="loading-bar-container">
+    <p id="progress-text">
+      Dominando ferramentas no-code e low-code: <span id="progress-num">0%</span>
+    </p>
+    <div class="loading-bar-neon"></div>
+  </div>  
+</section>
+
+<!-- SEÇÃO PROJETOS -->
+<section id="projetos" class="projetos">
+  <h2>Projetos em Destaque</h2>
+  <div class="projetos-grid">
+    <div class="projeto-card scroll-fade-up">
+      <img src="https://via.placeholder.com/400x250" alt="Projeto 1">
+      <h3>Nome do Projeto 1</h3>
+      <p>Uma breve descrição do projeto com foco em usabilidade e performance.</p>
+      <a href="#" class="btn neon-btn">Ver Projeto</a>
+    </div>
+
+    <div class="projeto-card scroll-fade-up">
+      <img src="https://via.placeholder.com/400x250" alt="Projeto 2">
+      <h3>Nome do Projeto 2</h3>
+      <p>Plataforma moderna com layout responsivo e integração com API.</p>
+      <a href="#" class="btn neon-btn">Ver Projeto</a>
+    </div>
+
+    <div class="projeto-card scroll-fade-up">
+      <img src="https://via.placeholder.com/400x250" alt="Projeto 3">
+      <h3>Nome do Projeto 3</h3>
+      <p>Site institucional focado na performance e experiência do usuário.</p>
+      <a href="#" class="btn neon-btn">Ver Projeto</a>
+    </div>
+  </div>
+</section>
+
+
+<style>
+.scroll-slide-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: all 1s ease;
+}
+.scroll-slide-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.loading-bar-container {
+  max-width: 600px;
+  margin: 40px auto 0;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.loading-bar {
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  height: 14px;
+  margin-top: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #00f6ff;
+}
+
+.loading-bar-inner {
+  height: 100%;
+  width: 54%;
+  background: linear-gradient(90deg, #00f6ff, #0077ff);
+  box-shadow: 0 0 20px #00f6ff;
+  transition: width 0.5s ease;
+}
+</style>
+
+<script>
+  const observerEstudos = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
     });
-  </script>
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.scroll-slide-left').forEach(el => {
+    observerEstudos.observe(el);
+  });
+</script>
+
+
+ 
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,93 +1,358 @@
+/* Fonte moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Fonte e fundo */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f0f4f8;  /* Cor neutra */
-  color: #333; /* Cor do texto */
+  font-family: 'Inter', sans-serif;
+  background-color: #f7faff;
+  color: #1a1a1a;
+}
+
+/* Centraliza a hero section */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Texto */
+.hero-text {
+  max-width: 700px;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* Botão Neon */
+.neon-btn {
+  position: relative;
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 1rem;
+  color: white;
+  background-color: #0f0f0f;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.neon-btn::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00f6ff, #0077ff, #00f6ff);
+  background-size: 300% 300%;
+  z-index: -1;
+  filter: blur(6px);
+  animation: rotate 3s linear infinite;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+.neon-btn:active {
+  background-color: #00bfff;
+  color: black;
+}
+
+@keyframes rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Seção Sobre Mim */
+.sobre {
+  padding: 100px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef);
+  color: #ffffff;
+}
+
+.sobre h2 {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  font-weight: 600;
+}
+
+.sobre-conteudo-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  justify-content: center;
+}
+
+.sobre-foto img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  box-shadow: 0 8px 28px rgba(0, 174, 239, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sobre-foto img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 36px rgba(0, 174, 239, 0.6);
+}
+
+.sobre-conteudo {
+  flex: 1;
+  text-align: left;
+  min-width: 300px;
+}
+
+.sobre-conteudo p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* Animações de scroll */
+.scroll-fade-left,
+.scroll-fade-right {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 1s ease;
+}
+
+.scroll-fade-right {
+  transform: translateX(60px);
+}
+
+.scroll-fade-left.active,
+.scroll-fade-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Seção Tecnologias */
+.tech-card {
+  background: linear-gradient(135deg, #1354a5, #00aeef);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 16px rgba(0, 174, 239, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  gap: 10px;
 }
 
-header {
-  text-align: center;
-  background-color: #0a1f44;  /* Azul escuro */
-  color: #fff;
-  padding: 60px 20px;
-  width: 100%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+.tech-card img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* deixa branco se o ícone for escuro */
 }
 
-h1 {
-  font-size: 3em;
-  margin-bottom: 15px;
+.tech-card span {
+  margin-top: 8px;
+  font-size: 1rem;
 }
 
-p {
-  font-size: 1.5em;
-  margin-bottom: 25px;
+.tech-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 24px rgba(0, 174, 239, 0.3);
 }
 
-button {
-  background-color: #00c4ff;  /* Azul claro */
-  color: #fff;
-  padding: 15px 35px;
-  font-size: 1.2em;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 250px;
+/* Subtítulo */
+.subtitulo {
+  font-size: 1.4rem;
+  margin: 40px 0 20px;
+  color: #0b1b2b;
 }
 
-button:hover {
-  background-color: #0081b3;  /* Azul mais escuro */
-}
-
-#sobre-mim, #meus-projetos {
-  margin: 50px 0;
-  text-align: center;
-  width: 80%;
+/* Grade com ajuste pequeno */
+.tecnologias-grid.small {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
   max-width: 1000px;
+  margin: 0 auto;
 }
 
-#sobre-mim h2, #meus-projetos h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #0a1f44; /* Azul escuro */
+/* Cartão de tecnologia */
+.tech-card {
+  background: linear-gradient(135deg, #1354a5, #00aeef);
+  color: white;
+  padding: 16px 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 4px 16px rgba(0, 174, 239, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
 }
 
-.projeto {
-  display: inline-block;
-  margin: 20px;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: 45%;
+/* Ícone */
+.tech-card img {
+  width: clamp(48px, 6vw, 72px);
+  height: clamp(48px, 6vw, 72px);
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.tech-card:hover img {
+  transform: scale(1.1);
+}
+
+
+/* Animação glow */
+.tech-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.tech-card:hover::before {
+  opacity: 1;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 174, 239, 0.4);
+}
+
+.loading-bar-neon {
+  position: relative;
+  width: 60%;
+  height: 16px;
+  margin: 20px auto 0;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.loading-bar-neon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 54%;
+  background: linear-gradient(90deg, #00f6ff, #00bfff);
+  border-radius: 12px;
+  animation: loading-neon 5s ease-in-out infinite;
+  box-shadow: 0 0 12px #00f6ff, 0 0 24px #00bfff;
+}
+
+@keyframes loading-neon {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0.3;
+  }
+}
+
+PROJETOS
+.projetos {
+  padding: 100px 20px;
+  background-color: #f9fafc;
   text-align: center;
 }
 
-.projeto h3 {
-  font-size: 1.8em;
-  color: #00c4ff; /* Azul claro */
+.projetos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #0b1b2b;
 }
 
-footer {
-  background-color: #0a1f44;
-  color: #fff;
-  text-align: center;
+.projetos-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.projeto-card {
+  background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef);
+  color: white;
+  border-radius: 16px;
   padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 174, 239, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 36px rgba(0, 174, 239, 0.5);
+}
+
+.projeto-card img {
   width: 100%;
-  position: fixed;
-  bottom: 0;
+  border-radius: 12px;
+  margin-bottom: 16px;
 }
 
-footer p {
-  font-size: 1em;
+.projeto-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.projeto-card p {
+  font-size: 1rem;
+  margin-bottom: 16px;
 }
