@@ -161,65 +161,20 @@ body {
 }
 
 /* Seção Tecnologias */
+/* ==========================
+   CARTÕES DE TECNOLOGIAS
+========================== */
+
+/* Card de tecnologia */
 .tech-card {
-  background: linear-gradient(135deg, #1354a5, #00aeef);
-  color: white;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 500;
-  box-shadow: 0 4px 16px rgba(0, 174, 239, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.tech-card img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  filter: brightness(0) invert(1); /* deixa branco se o ícone for escuro */
-}
-
-.tech-card span {
-  margin-top: 8px;
-  font-size: 1rem;
-}
-
-.tech-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 6px 24px rgba(0, 174, 239, 0.3);
-}
-
-/* Subtítulo */
-.subtitulo {
-  font-size: 1.4rem;
-  margin: 40px 0 20px;
-  color: #0b1b2b;
-}
-
-/* Grade com ajuste pequeno */
-.tecnologias-grid.small {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Cartão de tecnologia */
-.tech-card {
-  background: linear-gradient(135deg, #1354a5, #00aeef);
-  color: white;
-  padding: 16px 12px;
-  border-radius: 12px;
+  background: linear-gradient(135deg, #1354a5, #00aeef); /* Gradiente tech azul */
+  color: white; /* Contraste de texto */
+  padding: 16px 12px; /* Espaçamento interno */
+  border-radius: 12px; /* Borda arredondada */
   text-align: center;
   font-size: 0.9rem;
   font-weight: 500;
-  box-shadow: 0 4px 16px rgba(0, 174, 239, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 174, 239, 0.15); /* Sombra leve */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -229,21 +184,27 @@ body {
   overflow: hidden;
 }
 
-/* Ícone */
+/* Ícones padrão dos cards */
 .tech-card img {
-  width: clamp(48px, 6vw, 72px);
+  width: clamp(48px, 6vw, 72px); /* Responsivo */
   height: clamp(48px, 6vw, 72px);
-  object-fit: contain;
-  filter: brightness(0) invert(1);
+  object-fit: contain; /* Evita distorção */
   transition: transform 0.3s ease;
+  /* filter removido para manter as cores originais dos logos */
 }
 
+/* Ícones que precisam ser um pouco maiores (ex: Intercom, Jira) */
+.tech-card img.tech-icon-lg {
+  width: clamp(60px, 7.5vw, 96px); /* Aumentado para destaque sutil */
+  height: clamp(60px, 7.5vw, 96px);
+}
+
+/* Hover no ícone */
 .tech-card:hover img {
   transform: scale(1.1);
 }
 
-
-/* Animação glow */
+/* Glow neon sutil ao hover */
 .tech-card::before {
   content: "";
   position: absolute;
@@ -261,49 +222,30 @@ body {
   opacity: 1;
 }
 
+/* Elevação no hover */
 .tech-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 24px rgba(0, 174, 239, 0.4);
 }
 
-.loading-bar-neon {
-  position: relative;
-  width: 60%;
-  height: 16px;
-  margin: 20px auto 0;
-  border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.1);
-  overflow: hidden;
+/* Subtítulo (categorias) */
+.subtitulo {
+  font-size: 1.4rem;
+  margin: 40px 0 20px;
+  color: #0b1b2b;
 }
 
-.loading-bar-neon::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 54%;
-  background: linear-gradient(90deg, #00f6ff, #00bfff);
-  border-radius: 12px;
-  animation: loading-neon 5s ease-in-out infinite;
-  box-shadow: 0 0 12px #00f6ff, 0 0 24px #00bfff;
+/* Grade responsiva de tecnologias */
+.tecnologias-grid.small {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adaptável por coluna */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-@keyframes loading-neon {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0.3;
-  }
-}
+
+
 
 PROJETOS
 .projetos {
@@ -743,3 +685,108 @@ Projetos2
   opacity: 0.7;
 }
 
+/* ANIMAÇÃO SUTIL DE PULSO nos ícones sociais */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 174, 239, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 174, 239, 0.7);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 174, 239, 0.4);
+  }
+}
+
+/* Aplica a animação de pulso nos ícones */
+.contato-social a img {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 174, 239, 0.4);
+  transition: transform 0.3s ease;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* FRASE FINAL COM BRILHO SUTIL */
+@keyframes brilhoTexto {
+  0% {
+    opacity: 0.6;
+    text-shadow: none;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px #00aeef;
+  }
+  100% {
+    opacity: 0.6;
+    text-shadow: none;
+  }
+}
+
+.assinatura-final {
+  margin-top: 40px;
+  font-size: 0.95rem;
+  opacity: 0.7;
+  animation: brilhoTexto 6s ease-in-out infinite;
+}
+
+/* =======================
+   SEÇÃO HERO (INICIAL)
+========================= */
+
+.hero {
+  position: relative; /* Necessário para posicionar o overlay */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+
+  /* Fundo com imagem */
+  background-image: url('assets/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Overlay escuro com leve transparência */
+.hero-overlay {
+  position: absolute;
+  inset: 0; /* Ocupa toda a área do pai */
+  background: rgba(0, 0, 0, 0.6); /* Camada preta com 60% opacidade */
+  z-index: 1; /* Fica atrás do texto */
+}
+
+/* Texto da seção hero */
+.hero-text {
+  position: relative;
+  z-index: 2; /* Fica acima do overlay */
+  max-width: 700px;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ffffff; /* Garante branco puro */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* Sombra mais forte para contraste */
+}
