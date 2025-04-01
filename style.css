@@ -362,101 +362,223 @@ Projetos2
 
 /* =======================
    SEÇÃO PROJETOS EM DESTAQUE
-   ======================= */
+======================= */
 
-   .projetos {
-    padding: 120px 20px 100px 20px; /* Top aumentado para dar espaçamento da seção anterior */
-    background-color: #f9fafc; /* Fundo claro suave */
-    text-align: center; /* Centraliza o conteúdo por padrão */
+.projetos {
+  padding: 140px 20px 100px 20px; /* Top aumentado para dar espaçamento da seção anterior */
+  background-color: #f9fafc; /* Fundo claro suave */
+  text-align: center; /* Centraliza o conteúdo por padrão */
+}
+
+/* Título da seção */
+.projetos h2 {
+  font-size: 2.5rem; /* Tamanho do título */
+  text-align: center; /* Garante que o título fique centralizado */
+  margin-bottom: 60px; /* Espaço abaixo do título */
+  color: #0b1b2b; /* Cor escura elegante */
+}
+
+/* Container geral do carrossel */
+.slider-container {
+  overflow: hidden; /* Esconde conteúdo fora do frame */
+}
+
+/* Envelopa os slides e faz scroll horizontal com flex */
+.slider-wrapper {
+  display: flex; /* Layout horizontal */
+  transition: transform 0.5s ease-in-out; /* Suavidade na troca de slide */
+  gap: 40px; /* Espaço entre slides */
+}
+
+/* Card de cada projeto individual */
+.projeto-card {
+  background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef); /* Gradiente tech azul */
+  color: #ffffff; /* Letras brancas para contraste */
+  border-radius: 20px; /* Cantos arredondados */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra em relevo suave */
+  min-width: 100%; /* Largura total do frame */
+  display: flex;
+  padding: 40px;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: space-between; /* Espaça imagem e texto */
+  flex-wrap: wrap; /* Responsivo para telas menores */
+}
+
+/* Estilo da imagem do projeto */
+.projeto-img img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 174, 239, 0.3); /* Sombra azulada neon */
+}
+
+/* Área do texto */
+.projeto-info {
+  flex: 1;
+  padding: 20px 40px;
+  text-align: left;
+}
+
+.projeto-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.projeto-info p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Ícones das tecnologias */
+.projeto-tech {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.projeto-tech img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Botão de acesso ao projeto */
+.btn-projeto {
+  padding: 12px 28px;
+  background-color: #0f0f0f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+/* Brilho neon animado no botão */
+.btn-projeto::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00f6ff, #0077ff, #00f6ff);
+  background-size: 400% 400%;
+  z-index: -1;
+  filter: blur(6px);
+  animation: brilhoNeon 3s linear infinite;
+  border-radius: 10px;
+  opacity: 0.6;
+}
+
+.btn-projeto:hover {
+  background-color: #00bfff;
+  color: #0f0f0f;
+}
+
+/* Navegação de bolinhas */
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px; /* Aumentado para mais espaçamento */
+  margin-bottom: 20px; /* Adicionado espaçamento inferior para separar da próxima seção */
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  background-color: #00aeef; /* Cor principal neon */
+}
+
+/* Animação do brilho neon */
+@keyframes brilhoNeon {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .projetos h2 {
-    font-size: 2.5rem; /* Tamanho do título */
-    text-align: center; /* Garante que o título fique centralizado */
-    margin: 80px 0 60px; /* Espaço acima e abaixo do título */
-    color: #0b1b2b; /* Cor escura elegante */
+  50% {
+    background-position: 100% 50%;
   }
-  
-  /* Container geral do carrossel */
-  .slider-container {
-    overflow: hidden; /* Esconde conteúdo fora do frame */
+  100% {
+    background-position: 0% 50%;
   }
+}
+
   
-  /* Envelopa os slides e faz scroll horizontal com flex */
-  .slider-wrapper {
-    display: flex; /* Layout horizontal */
-    transition: transform 0.5s ease-in-out; /* Suavidade na troca de slide */
-    gap: 40px; /* Espaço entre slides */
+  
+  /* =======================
+     SEÇÃO CONTATO
+  ======================= */
+
+  .contato {
+    padding: 120px 20px 100px 20px; /* Aumentado para criar espaçamento do topo */
+    background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef); /* Degradê tech */
+    color: #ffffff; /* Texto branco */
+    text-align: center;
   }
-  
-  /* Card de cada projeto individual */
-  .projeto-card {
-    background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef); /* Gradiente tech azul */
-    color: #ffffff; /* Letras brancas para contraste */
-    border-radius: 20px; /* Cantos arredondados */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra em relevo suave */
-    min-width: 100%; /* Largura total do frame */
-    display: flex;
-    padding: 40px;
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: space-between; /* Espaça imagem e texto */
-    flex-wrap: wrap; /* Responsivo para telas menores */
-  }
-  
-  /* Estilo da imagem do projeto */
-  .projeto-img img {
-    max-width: 400px;
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 174, 239, 0.3); /* Sombra azulada neon */
-  }
-  
-  /* Área do texto */
-  .projeto-info {
-    flex: 1;
-    padding: 20px 40px;
-    text-align: left;
-  }
-  
-  .projeto-info h3 {
-    font-size: 1.8rem;
+
+  /* Título da seção */
+  .contato h2 {
+    font-size: 2.5rem;
     margin-bottom: 20px;
+    font-weight: 600;
   }
-  
-  .projeto-info p {
+
+  /* Texto abaixo do título */
+  .contato-descricao {
     font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
     line-height: 1.6;
-    margin-bottom: 20px;
   }
-  
-  /* Ícones das tecnologias */
-  .projeto-tech {
+
+  /* Formulário centralizado */
+  .contato-form {
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 20px;
   }
-  
-  .projeto-tech img {
-    width: 32px;
-    height: 32px;
+
+  /* Campos de input e textarea */
+  .contato-form input,
+  .contato-form textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: none;
   }
-  
-  /* Botão de acesso ao projeto */
-  .btn-projeto {
-    padding: 12px 28px;
+
+  /* Animação do botão neon */
+  .btn-contato-neon {
+    padding: 14px 30px;
     background-color: #0f0f0f;
     color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
     border: none;
     border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease-in-out;
+    cursor: pointer;
     position: relative;
+    overflow: hidden;
     z-index: 1;
+    transition: background-color 0.3s ease;
   }
-  
-  /* Brilho neon animado no botão */
-  .btn-projeto::before {
+
+  /* Neon animado no botão */
+  .btn-contato-neon::before {
     content: "";
     position: absolute;
     top: -2px;
@@ -467,38 +589,18 @@ Projetos2
     background-size: 400% 400%;
     z-index: -1;
     filter: blur(6px);
-    animation: brilhoNeon 3s linear infinite;
+    animation: brilhoNeon 4s linear infinite;
     border-radius: 10px;
-    opacity: 0.6;
+    opacity: 0.5;
   }
-  
-  .btn-projeto:hover {
+
+  /* Hover do botão */
+  .btn-contato-neon:hover {
     background-color: #00bfff;
     color: #0f0f0f;
   }
-  
-  /* Navegação de bolinhas */
-  .slider-nav {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 30px;
-  }
-  
-  .slider-dot {
-    width: 12px;
-    height: 12px;
-    background-color: #ccc;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .slider-dot.active {
-    background-color: #00aeef; /* Cor principal neon */
-  }
-  
-  /* Animação do brilho neon */
+
+  /* Reutiliza a animação neon que você já usa */
   @keyframes brilhoNeon {
     0% {
       background-position: 0% 50%;
@@ -510,4 +612,3 @@ Projetos2
       background-position: 0% 50%;
     }
   }
-  
