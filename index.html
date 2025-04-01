@@ -263,39 +263,34 @@
     Fique à vontade para me chamar!
   </p>
 
-  <div class="contato-wrapper">
-    <!-- Coluna de redes sociais -->
-    <div class="contato-social">
-      <a href="https://www.linkedin.com/in/seu-perfil" target="_blank">
-        <img src="assets/icons/linkedin.png" alt="LinkedIn">
-      </a>
-      <a href="https://github.com/seu-usuario" target="_blank">
-        <img src="assets/icons/github.png" alt="GitHub">
-      </a>
-      <a href="mailto:seuemail@gmail.com">
-        <img src="assets/icons/email.png" alt="E-mail">
-      </a>
-      <a href="https://wa.me/seunumero" target="_blank">
-        <img src="assets/icons/whatsapp.png" alt="WhatsApp">
-      </a>
-    </div>
+  <!-- Formulário centralizado -->
+  <form class="contato-form">
+    <input type="text" name="nome" placeholder="Seu nome" required />
+    <input type="email" name="email" placeholder="Seu e-mail" required />
+    <textarea name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+    <button type="submit" class="btn-contato-neon">Enviar Mensagem</button>
+  </form>
 
-    <!-- Formulário de contato -->
-    <form class="contato-form">
-      <!-- Campo Nome -->
-      <input type="text" name="nome" placeholder="Seu nome" required />
-
-      <!-- Campo Email -->
-      <input type="email" name="email" placeholder="Seu e-mail" required />
-
-      <!-- Campo Mensagem -->
-      <textarea name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
-
-      <!-- Botão Enviar -->
-      <button type="submit" class="btn-contato-neon">Enviar Mensagem</button>
-    </form>
+  <!-- Redes sociais abaixo do formulário -->
+  <div class="contato-social">
+    <a href="https://www.linkedin.com/in/seu-perfil" target="_blank">
+      <img src="assets/icons/linkedin.png" alt="LinkedIn">
+    </a>
+    <a href="https://github.com/seu-usuario" target="_blank">
+      <img src="assets/icons/github.png" alt="GitHub">
+    </a>
+    <a href="mailto:seuemail@gmail.com">
+      <img src="assets/icons/gmail.png" alt="E-mail">
+    </a>
+    <a href="https://wa.me/seunumero" target="_blank">
+      <img src="assets/icons/whatsapp.png" alt="WhatsApp">
+    </a>
   </div>
+
+  <!-- Frase final tipo rodapé da seção -->
+  <p class="assinatura-final">Desenvolvido com café ☕, HTML e muito amor ao código 💙</p>
 </section>
+
 
 
 
