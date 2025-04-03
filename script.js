@@ -77,3 +77,26 @@ const observerEstudos = new IntersectionObserver(entries => {
 document.querySelectorAll('.scroll-slide-left').forEach(el => {
   observerEstudos.observe(el);
 });
+
+  const form = document.getElementById('form-contato');
+  const mensagem = document.getElementById('mensagem-sucesso');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const dados = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: dados,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(() => {
+      form.reset();
+      mensagem.style.display = 'block';
+    }).catch(() => {
+      alert("Ocorreu um erro ao enviar. Tente novamente mais tarde.");
+    });
+  });
+

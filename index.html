@@ -140,10 +140,8 @@
      SEÇÃO PROJETOS
 ================================ -->
 <section id="projetos" class="projetos">
-  <!-- Título centralizado -->
   <h2>Projetos em Destaque</h2>
 
-  <!-- Container do carrossel -->
   <div class="slider-container">
     <div class="slider-wrapper">
 
@@ -153,14 +151,18 @@
           <img src="assets/images/projeto1.png" alt="Projeto 1" />
         </div>
         <div class="projeto-info">
-          <h3>Projeto Pessoal 1</h3>
-          <p>Este projeto foi criado com o objetivo de aprimorar minhas habilidades em HTML, CSS e JavaScript. Além disso, explorei boas práticas de responsividade e acessibilidade.</p>
-          <div class="projeto-tech">
+          <h3>Meu Portfólio</h3>
+          <p>Projeto pessoal desenvolvido com foco em identidade visual, performance e animações suaves. Criei uma interface responsiva, moderna e com elementos interativos para apresentar minhas habilidades de forma clara e visualmente atraente.</p>
+          
+          <div class="projeto-tech" style="justify-content: center;">
             <img src="assets/icons/html5.png" alt="HTML5">
             <img src="assets/icons/css.png" alt="CSS3">
             <img src="assets/icons/js.png" alt="JavaScript">
           </div>
-          <a href="#" class="btn neon-btn">Acessar Projeto</a>
+
+          <div style="text-align: center;">
+            <a href="#" class="btn neon-btn">Acessar Projeto</a>
+          </div>
         </div>
       </div>
 
@@ -170,13 +172,18 @@
           <img src="assets/images/projeto2.png" alt="Projeto 2" />
         </div>
         <div class="projeto-info">
-          <h3>Projeto Freelancer</h3>
-          <p>Landing page desenvolvida para cliente real utilizando HTML semântico, estilização moderna e animações com JavaScript.</p>
-          <div class="projeto-tech">
+          <h3>Hotelfy - Soluções Inteligentes para sua Hospedagem</h3>
+          <p>Site criado para facilitar a gestão de hotéis e pousadas. A Hotelfy oferece soluções inteligentes como criação de sites, chatbot de atendimento, entre outros. Tudo para aumentar a eficiência e o faturamento da hospedagem.</p>
+          
+          <div class="projeto-tech" style="justify-content: center;">
             <img src="assets/icons/html5.png" alt="HTML5">
             <img src="assets/icons/css.png" alt="CSS3">
+            <img src="assets/icons/js.png" alt="JavaScript">
           </div>
-          <a href="#" class="btn neon-btn">Acessar Projeto</a>
+
+          <div style="text-align: center;">
+            <a href="https://www.hotelfy.com.br" class="btn neon-btn">Acessar Projeto</a>
+          </div>
         </div>
       </div>
 
@@ -186,36 +193,46 @@
           <img src="assets/images/projeto3.png" alt="Projeto 3" />
         </div>
         <div class="projeto-info">
-          <h3>Aplicativo No-Code</h3>
-          <p>Projeto feito com FlutterFlow para resolver um problema real de agendamento. Interface intuitiva, conectada a banco de dados externo.</p>
-          <div class="projeto-tech">
-            <img src="assets/icons/flutterflow.png" alt="FlutterFlow">
-            <img src="assets/icons/nocode.png" alt="No Code">
+          <h3>Hostel Kaizen - Hospedagem e Café da manhã</h3>
+          <p>Site institucional do Hostel Kaizen, localizado em Curitiba. O projeto foca em apresentar a estrutura do hostel, diferenciais de hospedagem e café da manhã, com um layout moderno e otimizado para conversão de reservas diretas.</p>
+          
+          <div class="projeto-tech" style="justify-content: center;">
+            <img src="assets/icons/html5.png" alt="HTML5">
+            <img src="assets/icons/css.png" alt="CSS3">
+            <img src="assets/icons/js.png" alt="JavaScript">
           </div>
-          <a href="#" class="btn neon-btn">Acessar Projeto</a>
+
+          <div style="text-align: center;">
+            <a href="http://www.hostelkaizen.com" class="btn neon-btn">Acessar Projeto</a>
+          </div>
         </div>
       </div>
 
       <!-- Projeto 4 -->
       <div class="projeto-card">
         <div class="projeto-img">
-          <img src="assets/projetos/projeto4.png" alt="Projeto 4" />
+          <img src="assets/images/projeto4.png" alt="Projeto 4" />
         </div>
         <div class="projeto-info">
-          <h3>Dashboard de Monitoramento</h3>
-          <p>Dashboard construído com ServiceNow e integrações usando ferramentas low-code para acompanhar KPIs operacionais.</p>
-          <div class="projeto-tech">
-            <img src="assets/icons/servicenow.png" alt="ServiceNow">
-            <img src="assets/icons/lowcode.png" alt="Low Code">
+          <h3>Hotel Job - Vagas de Emprego na Hotelaria</h3>
+          <p>Plataforma de empregos dedicada ao setor de hotelaria. Desenvolvida para conectar profissionais da área com oportunidades reais, com foco em usabilidade, SEO e integração com formulários de candidatura simplificados. (Em desenvolvimento)</p>
+          
+          <div class="projeto-tech" style="justify-content: center;">
+            <img src="assets/icons/html5.png" alt="HTML5">
+            <img src="assets/icons/css.png" alt="CSS3">
+            <img src="assets/icons/js.png" alt="JavaScript">
           </div>
-          <a href="#" class="btn neon-btn">Acessar Projeto</a>
+
+          <div style="text-align: center;">
+            <a href="https://www.hoteljob.app" class="btn neon-btn">Acessar Projeto</a>
+          </div>
         </div>
       </div>
 
-    </div> <!-- Fim do slider-wrapper -->
-  </div> <!-- Fim do slider-container -->
+    </div> <!-- slider-wrapper -->
+  </div> <!-- slider-container -->
 
-  <!-- Navegação com bolinhas -->
+  <!-- Bolinhas navegação -->
   <div class="slider-nav">
     <div class="slider-dot active"></div>
     <div class="slider-dot"></div>
@@ -223,6 +240,7 @@
     <div class="slider-dot"></div>
   </div>
 </section>
+
 
 
 <!-- =======================
@@ -238,38 +256,45 @@
     Fique à vontade para me chamar!
   </p>
 
-  <!-- Formulário centralizado -->
-  <form class="contato-form">
-    <input type="text" name="nome" placeholder="Seu nome" required />
+  <!-- Formulário com integração FormSubmit -->
+  <form class="contato-form" id="form-contato" action="https://formsubmit.co/tk_marco@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Seu nome" required />
     <input type="email" name="email" placeholder="Seu e-mail" required />
-    <textarea name="mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+    <textarea name="message" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+
+    <!-- Configurações extras FormSubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="#">
+
+    <!-- Botão -->
     <button type="submit" class="btn-contato-neon">Enviar Mensagem</button>
+
+    <!-- Mensagem de sucesso -->
+    <p id="mensagem-sucesso" class="mensagem-sucesso" style="display: none;">
+      Obrigado por escrever! Assim que possível irei retornar seu e-mail. 😊
+    </p>
   </form>
 
-  <!-- Redes sociais abaixo do formulário -->
+  <!-- Redes sociais -->
   <div class="contato-social">
-    <a href="https://www.linkedin.com/in/seu-perfil" target="_blank">
+    <a href="https://www.linkedin.com/in/marco-silva-junior/" target="_blank">
       <img src="assets/icons/linkedin.png" alt="LinkedIn">
     </a>
-    <a href="https://github.com/seu-usuario" target="_blank">
+    <a href="https://github.com/omarcojunior" target="_blank">
       <img src="assets/icons/github.png" alt="GitHub">
     </a>
-    <a href="mailto:seuemail@gmail.com">
+    <a href="mailto:tk_marco@gmail.com">
       <img src="assets/icons/gmail.png" alt="E-mail">
     </a>
-    <a href="https://wa.me/seunumero" target="_blank">
+    <a href="https://wa.me/5541988833923" target="_blank">
       <img src="assets/icons/whatsapp.png" alt="WhatsApp">
     </a>
   </div>
 
-  <!-- Frase final tipo rodapé da seção -->
-  <p class="assinatura-final">Desenvolvido com café ☕, HTML e muito amor ao código 💙</p>
+  <!-- Rodapé -->
+  <p class="assinatura-final">Desenvolvido com café ☕, HTML e muito amor ao código ❤️</p>
 </section>
 
-
-
-
- 
 
   <script src="script.js"></script>
 </body>
