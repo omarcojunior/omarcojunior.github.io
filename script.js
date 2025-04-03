@@ -64,3 +64,16 @@ dots.forEach((dot, index) => {
     goToSlide(currentIndex);
   });
 });
+
+
+const observerEstudos = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.scroll-slide-left').forEach(el => {
+  observerEstudos.observe(el);
+});

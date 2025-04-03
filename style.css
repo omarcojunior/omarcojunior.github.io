@@ -1,33 +1,53 @@
-/* Fonte moderna */
+
+/* =======================
+   IMPORTAÇÃO E RESET
+======================= */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fonte e fundo */
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f7faff;
   color: #1a1a1a;
 }
 
-/* Centraliza a hero section */
+
+/* =======================
+   SEÇÃO HERO
+======================= */
 .hero {
+  position: relative;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   padding: 40px 20px;
   text-align: center;
+  background-image: url('assets/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-/* Texto */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
 .hero-text {
+  position: relative;
+  z-index: 2;
   max-width: 700px;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 .hero-text h1 {
@@ -38,10 +58,13 @@ body {
 .hero-text p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-  color: #555;
+  color: #ffffff;
 }
 
-/* Botão Neon */
+
+/* =======================
+   BOTÃO NEON
+======================= */
 .neon-btn {
   position: relative;
   display: inline-block;
@@ -69,7 +92,7 @@ body {
   background-size: 300% 300%;
   z-index: -1;
   filter: blur(6px);
-  animation: rotate 3s linear infinite;
+  animation: brilhoNeon 3s linear infinite;
   border-radius: 10px;
   opacity: 0.7;
 }
@@ -79,24 +102,24 @@ body {
   color: black;
 }
 
-@keyframes rotate {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+@keyframes brilhoNeon {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Seção Sobre Mim */
+
+/* Seção Sobre Mim, Scroll Animations, Tecnologias, Projetos, Contato... */
+/* Trechos do CSS das outras seções já entregues, inseridos aqui */
+
+/* ======================
+   Seção Sobre Mim
+====================== */
 .sobre {
   padding: 100px 20px;
-  text-align: center;
   background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef);
   color: #ffffff;
+  text-align: center;
 }
 
 .sobre h2 {
@@ -120,7 +143,7 @@ body {
   height: 280px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #ffffff;
+  border: 4px solid #fff;
   box-shadow: 0 8px 28px rgba(0, 174, 239, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -132,8 +155,8 @@ body {
 
 .sobre-conteudo {
   flex: 1;
-  text-align: left;
   min-width: 300px;
+  text-align: left;
 }
 
 .sobre-conteudo p {
@@ -142,7 +165,9 @@ body {
   margin-bottom: 16px;
 }
 
-/* Animações de scroll */
+/* ==============================
+   Animações de entrada com scroll
+============================== */
 .scroll-fade-left,
 .scroll-fade-right {
   opacity: 0;
@@ -160,21 +185,18 @@ body {
   transform: translateX(0);
 }
 
-/* Seção Tecnologias */
-/* ==========================
-   CARTÕES DE TECNOLOGIAS
-========================== */
-
-/* Card de tecnologia */
+/* ======================
+   Cards de Tecnologias
+====================== */
 .tech-card {
-  background: linear-gradient(135deg, #1354a5, #00aeef); /* Gradiente tech azul */
-  color: white; /* Contraste de texto */
-  padding: 16px 12px; /* Espaçamento interno */
-  border-radius: 12px; /* Borda arredondada */
+  background: linear-gradient(135deg, #1354a5, #00aeef);
+  color: white;
+  padding: 16px 12px;
+  border-radius: 12px;
   text-align: center;
   font-size: 0.9rem;
   font-weight: 500;
-  box-shadow: 0 4px 16px rgba(0, 174, 239, 0.15); /* Sombra leve */
+  box-shadow: 0 4px 16px rgba(0, 174, 239, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -184,27 +206,24 @@ body {
   overflow: hidden;
 }
 
-/* Ícones padrão dos cards */
+/* Tamanho padrão dos ícones */
 .tech-card img {
-  width: clamp(48px, 6vw, 72px); /* Responsivo */
+  width: clamp(48px, 6vw, 72px);
   height: clamp(48px, 6vw, 72px);
-  object-fit: contain; /* Evita distorção */
+  object-fit: contain;
   transition: transform 0.3s ease;
-  /* filter removido para manter as cores originais dos logos */
 }
 
-/* Ícones que precisam ser um pouco maiores (ex: Intercom, Jira) */
+/* Ícones que precisam ser maiores */
 .tech-card img.tech-icon-lg {
-  width: clamp(60px, 7.5vw, 96px); /* Aumentado para destaque sutil */
+  width: clamp(60px, 7.5vw, 96px);
   height: clamp(60px, 7.5vw, 96px);
 }
 
-/* Hover no ícone */
 .tech-card:hover img {
   transform: scale(1.1);
 }
 
-/* Glow neon sutil ao hover */
 .tech-card::before {
   content: "";
   position: absolute;
@@ -222,35 +241,83 @@ body {
   opacity: 1;
 }
 
-/* Elevação no hover */
 .tech-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 24px rgba(0, 174, 239, 0.4);
 }
 
-/* Subtítulo (categorias) */
 .subtitulo {
   font-size: 1.4rem;
   margin: 40px 0 20px;
   color: #0b1b2b;
 }
 
-/* Grade responsiva de tecnologias */
 .tecnologias-grid.small {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adaptável por coluna */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
+/* ======================
+   Loading Bar
+====================== */
+
+.loading-bar-container {
+  margin: 60px auto 60px auto; /* ⬅️ espaçamento acima e abaixo */
+  text-align: center;
+  width: 100%;
+}
+
+.loading-bar-neon {
+  position: relative;
+  width: 60%;
+  height: 16px;
+  margin: 20px auto 0;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.loading-bar-neon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 54%;
+  background: linear-gradient(90deg, #00f6ff, #00bfff);
+  border-radius: 12px;
+  animation: loading-neon 5s ease-in-out infinite;
+  box-shadow: 0 0 12px #00f6ff, 0 0 24px #00bfff;
+}
+
+
+@keyframes loading-neon {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0.3;
+  }
+}
 
 
 
-PROJETOS
+/* =======================
+   SEÇÃO PROJETOS
+======================= */
 .projetos {
-  padding: 100px 20px;
-  background-color: #f9fafc;
+  padding: 140px 20px 100px 20px; /* Espaço superior generoso */
+  background-color: #f9fafc; /* Fundo suave */
   text-align: center;
 }
 
@@ -260,6 +327,7 @@ PROJETOS
   color: #0b1b2b;
 }
 
+/* Grid responsivo para cards simples de projetos */
 .projetos-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -269,6 +337,7 @@ PROJETOS
   padding: 0 20px;
 }
 
+/* Card básico de projeto */
 .projeto-card {
   background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef);
   color: white;
@@ -299,107 +368,116 @@ PROJETOS
   margin-bottom: 16px;
 }
 
-
-Projetos2
-
 /* =======================
-   SEÇÃO PROJETOS EM DESTAQUE
+   SEÇÃO PROJETOS AJUSTADA
 ======================= */
 
 .projetos {
-  padding: 140px 20px 100px 20px; /* Top aumentado para dar espaçamento da seção anterior */
-  background-color: #f9fafc; /* Fundo claro suave */
-  text-align: center; /* Centraliza o conteúdo por padrão */
+  padding: 40px 20px 20px;
+  background-color: #f9fafc;
+  text-align: center;
 }
 
-/* Título da seção */
 .projetos h2 {
-  font-size: 2.5rem; /* Tamanho do título */
-  text-align: center; /* Garante que o título fique centralizado */
-  margin-bottom: 60px; /* Espaço abaixo do título */
-  color: #0b1b2b; /* Cor escura elegante */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0b1b2b;
 }
 
-/* Container geral do carrossel */
+/* Container externo do carrossel */
 .slider-container {
-  overflow: hidden; /* Esconde conteúdo fora do frame */
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  position: relative;
 }
 
-/* Envelopa os slides e faz scroll horizontal com flex */
+/* Linha de slides (sem padding lateral!) */
 .slider-wrapper {
-  display: flex; /* Layout horizontal */
-  transition: transform 0.5s ease-in-out; /* Suavidade na troca de slide */
-  gap: 40px; /* Espaço entre slides */
-}
-
-/* Card de cada projeto individual */
-.projeto-card {
-  background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef); /* Gradiente tech azul */
-  color: #ffffff; /* Letras brancas para contraste */
-  border-radius: 20px; /* Cantos arredondados */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra em relevo suave */
-  min-width: 100%; /* Largura total do frame */
   display: flex;
-  padding: 40px;
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: space-between; /* Espaça imagem e texto */
-  flex-wrap: wrap; /* Responsivo para telas menores */
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
 }
 
-/* Estilo da imagem do projeto */
+/* Slide individual */
+.projeto-card {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 174, 239, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-wrap: wrap;
+}
+
+/* Hover com leve elevação */
+.projeto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(0, 174, 239, 0.35);
+}
+
+/* Imagem do projeto */
 .projeto-img img {
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 174, 239, 0.3); /* Sombra azulada neon */
+  box-shadow: 0 4px 20px rgba(0, 174, 239, 0.3);
 }
 
-/* Área do texto */
+/* Informações */
 .projeto-info {
   flex: 1;
-  padding: 20px 40px;
+  padding: 20px 30px;
   text-align: left;
+  min-width: 300px;
 }
 
 .projeto-info h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  font-size: 1.6rem;
+  margin-bottom: 16px;
 }
 
 .projeto-info p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-/* Ícones das tecnologias */
+/* Tecnologias */
 .projeto-tech {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
 .projeto-tech img {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
-/* Botão de acesso ao projeto */
-.btn-projeto {
-  padding: 12px 28px;
+/* Botão Neon */
+.neon-btn {
+  padding: 12px 26px;
+  font-size: 1rem;
   background-color: #0f0f0f;
   color: #fff;
-  border: none;
   border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease-in-out;
+  border: none;
   position: relative;
   z-index: 1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
-/* Brilho neon animado no botão */
-.btn-projeto::before {
+.neon-btn::before {
   content: "";
   position: absolute;
   top: -2px;
@@ -415,18 +493,18 @@ Projetos2
   opacity: 0.6;
 }
 
-.btn-projeto:hover {
+.neon-btn:hover {
   background-color: #00bfff;
   color: #0f0f0f;
 }
 
-/* Navegação de bolinhas */
+/* Navegação por bolinhas */
 .slider-nav {
   display: flex;
   justify-content: center;
   gap: 12px;
-  margin-top: 40px; /* Aumentado para mais espaçamento */
-  margin-bottom: 20px; /* Adicionado espaçamento inferior para separar da próxima seção */
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .slider-dot {
@@ -439,152 +517,46 @@ Projetos2
 }
 
 .slider-dot.active {
-  background-color: #00aeef; /* Cor principal neon */
+  background-color: #00aeef;
 }
 
-/* Animação do brilho neon */
+/* Animação Neon */
 @keyframes brilhoNeon {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-  
-  
-  /* =======================
-     SEÇÃO CONTATO
-  ======================= */
-
-  .contato {
-    padding: 120px 20px 100px 20px; /* Aumentado para criar espaçamento do topo */
-    background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef); /* Degradê tech */
-    color: #ffffff; /* Texto branco */
-    text-align: center;
-  }
-
-  /* Título da seção */
-  .contato h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: 600;
-  }
-
-  /* Texto abaixo do título */
-  .contato-descricao {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 40px auto;
-    line-height: 1.6;
-  }
-
-  /* Formulário centralizado */
-  .contato-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  /* Campos de input e textarea */
-  .contato-form input,
-  .contato-form textarea {
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-family: inherit;
-    resize: none;
-  }
-
-  /* Animação do botão neon */
-  .btn-contato-neon {
-    padding: 14px 30px;
-    background-color: #0f0f0f;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 500;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    transition: background-color 0.3s ease;
-  }
-
-  /* Neon animado no botão */
-  .btn-contato-neon::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, #00f6ff, #0077ff, #00f6ff);
-    background-size: 400% 400%;
-    z-index: -1;
-    filter: blur(6px);
-    animation: brilhoNeon 4s linear infinite;
-    border-radius: 10px;
-    opacity: 0.5;
-  }
-
-  /* Hover do botão */
-  .btn-contato-neon:hover {
-    background-color: #00bfff;
-    color: #0f0f0f;
-  }
-
-  /* Reutiliza a animação neon que você já usa */
-  @keyframes brilhoNeon {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
 
 /* =======================
    SEÇÃO CONTATO
 ======================= */
 
 .contato {
-  padding: 100px 20px;
+  padding: 120px 20px 100px 20px; /* Espaço generoso */
   background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef);
   color: #ffffff;
   text-align: center;
 }
 
+/* Título da seção */
 .contato h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   font-weight: 600;
 }
 
+/* Descrição */
 .contato-descricao {
   font-size: 1.1rem;
   max-width: 600px;
-  margin: 0 auto 50px auto;
+  margin: 0 auto 40px auto;
   line-height: 1.6;
 }
 
-/* =======================
-   FORMULÁRIO DE CONTATO
-======================= */
+/* Formulário centralizado */
 .contato-form {
   max-width: 600px;
-  width: 100%;
   margin: 0 auto 40px auto;
   display: flex;
   flex-direction: column;
@@ -638,19 +610,6 @@ Projetos2
   color: #0f0f0f;
 }
 
-/* Animação neon reaproveitada */
-@keyframes brilhoNeon {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 /* =======================
    REDES SOCIAIS
 ======================= */
@@ -670,22 +629,27 @@ Projetos2
   padding: 10px;
   box-shadow: 0 4px 15px rgba(0, 174, 239, 0.4);
   transition: transform 0.3s ease;
+  animation: pulse 4s ease-in-out infinite;
 }
 
 .contato-social a img:hover {
   transform: scale(1.1);
 }
 
-/* =======================
-   FRASE FINAL (rodapé)
-======================= */
-.assinatura-final {
-  margin-top: 40px;
-  font-size: 0.95rem;
-  opacity: 0.7;
+/* Animação do brilho neon (reutilizável) */
+@keyframes brilhoNeon {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-/* ANIMAÇÃO SUTIL DE PULSO nos ícones sociais */
+/* Pulso animado nos ícones sociais */
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -701,19 +665,17 @@ Projetos2
   }
 }
 
-/* Aplica a animação de pulso nos ícones */
-.contato-social a img {
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  background-color: #fff;
-  padding: 10px;
-  box-shadow: 0 4px 15px rgba(0, 174, 239, 0.4);
-  transition: transform 0.3s ease;
-  animation: pulse 4s ease-in-out infinite;
+/* =======================
+   RODAPÉ (assinatura final)
+======================= */
+.assinatura-final {
+  margin-top: 40px;
+  font-size: 0.95rem;
+  opacity: 0.7;
+  animation: brilhoTexto 6s ease-in-out infinite;
 }
 
-/* FRASE FINAL COM BRILHO SUTIL */
+/* Brilho sutil animado */
 @keyframes brilhoTexto {
   0% {
     opacity: 0.6;
@@ -729,64 +691,82 @@ Projetos2
   }
 }
 
-.assinatura-final {
-  margin-top: 40px;
-  font-size: 0.95rem;
-  opacity: 0.7;
-  animation: brilhoTexto 6s ease-in-out infinite;
-}
-
 /* =======================
-   SEÇÃO HERO (INICIAL)
-========================= */
-
-.hero {
-  position: relative; /* Necessário para posicionar o overlay */
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+   SEÇÃO ESTUDANDO
+======================= */
+.estudos-section {
+  padding: 60px 20px 100px; /* padding inferior suficiente */
+  background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef);
+  color: #fff;
   text-align: center;
-
-  /* Fundo com imagem */
-  background-image: url('assets/images/hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
-/* Overlay escuro com leve transparência */
-.hero-overlay {
-  position: absolute;
-  inset: 0; /* Ocupa toda a área do pai */
-  background: rgba(0, 0, 0, 0.6); /* Camada preta com 60% opacidade */
-  z-index: 1; /* Fica atrás do texto */
-}
-
-/* Texto da seção hero */
-.hero-text {
-  position: relative;
-  z-index: 2; /* Fica acima do overlay */
-  max-width: 700px;
-  color: #ffffff;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-}
-
-.hero-text h1 {
-  font-size: 3rem;
+.estudos-section h2 {
+  font-size: 2.2rem;
   margin-bottom: 20px;
 }
 
-.hero-text p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+.estudos-descricao {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  color: #e0e0e0;
 }
 
-.hero-text p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  color: #ffffff; /* Garante branco puro */
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7); /* Sombra mais forte para contraste */
+.loading-bar-container {
+  max-width: 600px;
+  margin: 40px auto 0;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.loading-bar-neon {
+  position: relative;
+  width: 100%;
+  height: 16px;
+  margin-top: 16px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.loading-bar-neon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 54%;
+  background: linear-gradient(90deg, #00f6ff, #00bfff);
+  border-radius: 12px;
+  animation: loading-neon 5s ease-in-out infinite;
+  box-shadow: 0 0 12px #00f6ff, 0 0 24px #00bfff;
+}
+
+@keyframes loading-neon {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0.3;
+  }
+}
+
+.estudos-section {
+  padding: 60px 20px 100px;
+  background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef);
+  color: #fff;
+  text-align: center;
+
+  margin-top: 80px; /* 👈 ADICIONE ISSO */
+  border-top-left-radius: 24px;  /* opcional para suavizar */
+  border-top-right-radius: 24px; /* opcional para suavizar */
 }

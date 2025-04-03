@@ -100,95 +100,47 @@
 
 
 
-<!-- SEÇÃO ESTUDANDO ATUALMENTE -->
-<div style="height: 80px; background: #f9fafc;"></div>
-<section id="estudos" class="tecnologias estudos-section" style="text-align: center; padding-top: 100px; background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef); color: #fff;">
+<!-- ================================
+     SEÇÃO ESTUDANDO ATUALMENTE
+================================ -->
+<section id="estudos" class="tecnologias estudos-section">
   <h2>Estudando Atualmente</h2>
-  <p style="max-width: 700px; margin: 20px auto; font-size: 1.1rem; color: #e0e0e0;">
-    Estou constantemente buscando evoluir minhas habilidades como desenvolvedor e profissional de tecnologia. No momento, estou aprofundando meus conhecimentos em plataformas de automação, desenvolvimento de interfaces modernas e soluções sem código. Meu foco é unir eficiência com velocidade na entrega de projetos reais.
+
+  <p class="estudos-descricao">
+    Estou constantemente buscando evoluir minhas habilidades como desenvolvedor e profissional de tecnologia.
+    No momento, estou aprofundando meus conhecimentos em plataformas de automação, desenvolvimento de interfaces modernas
+    e soluções sem código. Meu foco é unir eficiência com velocidade na entrega de projetos reais.
   </p>
 
   <div class="tecnologias-grid small estudos-animado">
     <div class="tech-card scroll-slide-left">
-      <img src="assets/icons/servicenow.png" alt="ServiceNow" />
+      <img src="assets/icons/servicenow.png" alt="ServiceNow" class="tech-icon-lg" />
     </div>
     <div class="tech-card scroll-slide-left">
-      <img src="assets/icons/flutterflow.png" alt="FlutterFlow" />
+      <img src="assets/icons/flutterflow.png" alt="FlutterFlow" class="tech-icon-lg" />
     </div>
     <div class="tech-card scroll-slide-left">
-      <img src="assets/icons/nocode.png" alt="No Code" />
+      <img src="assets/icons/nocode.png" alt="No Code" class="tech-icon-lg" />
     </div>
     <div class="tech-card scroll-slide-left">
-      <img src="assets/icons/lowcode.png" alt="Low Code" />
+      <img src="assets/icons/lowcode.png" alt="Low Code" class="tech-icon-lg" />
     </div>
   </div>
 
+  <!-- Barra de progresso -->
   <div class="loading-bar-container">
-    <p id="progress-text">
-      Dominando ferramentas no-code e low-code: <span id="progress-num">0%</span>
-    </p>
+    <p id="progress-text">Dominando ferramentas no-code e low-code: <span id="progress-num">54%</span></p>
     <div class="loading-bar-neon"></div>
-  </div>  
+  </div>
 </section>
 
 
-<style>
-.scroll-slide-left {
-  opacity: 0;
-  transform: translateX(-80px);
-  transition: all 1s ease;
-}
-.scroll-slide-left.active {
-  opacity: 1;
-  transform: translateX(0);
-}
 
-.loading-bar-container {
-  max-width: 600px;
-  margin: 40px auto 0;
-  text-align: center;
-  color: #fff;
-  font-size: 1rem;
-}
-
-.loading-bar {
-  background-color: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  height: 14px;
-  margin-top: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 10px #00f6ff;
-}
-
-.loading-bar-inner {
-  height: 100%;
-  width: 54%;
-  background: linear-gradient(90deg, #00f6ff, #0077ff);
-  box-shadow: 0 0 20px #00f6ff;
-  transition: width 0.5s ease;
-}
-</style>
-
-<script>
-  const observerEstudos = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll('.scroll-slide-left').forEach(el => {
-    observerEstudos.observe(el);
-  });
-</script>
-
-
-<!--Seção projetos 2-->
-
-<!-- SEÇÃO PROJETOS -->
+<!-- ================================
+     SEÇÃO PROJETOS
+================================ -->
 <section id="projetos" class="projetos">
-  <!-- Título da seção -->
+  <!-- Título centralizado -->
   <h2>Projetos em Destaque</h2>
 
   <!-- Container do carrossel -->
@@ -197,22 +149,17 @@
 
       <!-- Projeto 1 -->
       <div class="projeto-card">
-        <!-- Imagem mockup do projeto -->
         <div class="projeto-img">
-          <img src="assets/projetos/projeto1.png" alt="Projeto 1" />
+          <img src="assets/images/projeto1.png" alt="Projeto 1" />
         </div>
-
-        <!-- Informações do projeto -->
         <div class="projeto-info">
           <h3>Projeto Pessoal 1</h3>
           <p>Este projeto foi criado com o objetivo de aprimorar minhas habilidades em HTML, CSS e JavaScript. Além disso, explorei boas práticas de responsividade e acessibilidade.</p>
-          <!-- Tecnologias utilizadas -->
           <div class="projeto-tech">
             <img src="assets/icons/html5.png" alt="HTML5">
             <img src="assets/icons/css.png" alt="CSS3">
             <img src="assets/icons/js.png" alt="JavaScript">
           </div>
-          <!-- Botão neon com animação -->
           <a href="#" class="btn neon-btn">Acessar Projeto</a>
         </div>
       </div>
@@ -220,7 +167,7 @@
       <!-- Projeto 2 -->
       <div class="projeto-card">
         <div class="projeto-img">
-          <img src="assets/projetos/projeto2.png" alt="Projeto 2" />
+          <img src="assets/images/projeto2.png" alt="Projeto 2" />
         </div>
         <div class="projeto-info">
           <h3>Projeto Freelancer</h3>
@@ -236,7 +183,7 @@
       <!-- Projeto 3 -->
       <div class="projeto-card">
         <div class="projeto-img">
-          <img src="assets/projetos/projeto3.png" alt="Projeto 3" />
+          <img src="assets/images/projeto3.png" alt="Projeto 3" />
         </div>
         <div class="projeto-info">
           <h3>Aplicativo No-Code</h3>
@@ -265,10 +212,10 @@
         </div>
       </div>
 
-    </div>
-  </div>
+    </div> <!-- Fim do slider-wrapper -->
+  </div> <!-- Fim do slider-container -->
 
-  <!-- Navegação do carrossel (pontos indicadores) -->
+  <!-- Navegação com bolinhas -->
   <div class="slider-nav">
     <div class="slider-dot active"></div>
     <div class="slider-dot"></div>
@@ -276,6 +223,7 @@
     <div class="slider-dot"></div>
   </div>
 </section>
+
 
 <!-- =======================
      SEÇÃO CONTATO
