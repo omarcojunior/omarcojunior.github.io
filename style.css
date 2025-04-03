@@ -539,6 +539,70 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* ========================
+   RESPONSIVIDADE - MOBILE (CARROSSEL HORIZONTAL)
+======================== */
+@media (max-width: 768px) {
+  .slider-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+  }
+
+  .slider-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .projeto-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    margin-right: 16px;
+    padding: 24px 20px;
+    background: linear-gradient(135deg, #0b1b2b, #1354a5, #00aeef);
+    border-radius: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .projeto-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+
+  .projeto-info {
+    padding: 0;
+  }
+
+  .projeto-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .projeto-info p {
+    font-size: 1rem;
+  }
+
+  .projeto-tech {
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .neon-btn {
+    margin-top: 10px;
+  }
+}
+
+
+
+
+
 
 /* =======================
    SEÇÃO CONTATO
@@ -797,51 +861,5 @@ body {
   border-top-left-radius: 24px;  /* opcional para suavizar */
   border-top-right-radius: 24px; /* opcional para suavizar */
 }
-
-
-/* ========================
-   RESPONSIVIDADE - MOBILE
-======================== */
-@media (max-width: 768px) {
-  .slider-wrapper {
-    padding: 0 16px; /* Espaçamento lateral no mobile */
-  }
-
-  .projeto-card {
-    flex-direction: column;
-    padding: 30px 20px;
-    text-align: center;
-  }
-
-  .projeto-img {
-    justify-content: center;
-    margin-bottom: 20px;
-    display: flex;
-  }
-
-  .projeto-img img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 0;
-  }
-
-  .projeto-info {
-    padding: 0;
-    text-align: center;
-  }
-
-  .projeto-info h3 {
-    font-size: 1.4rem;
-  }
-
-  .projeto-info p {
-    font-size: 1rem;
-  }
-
-  .projeto-tech {
-    justify-content: center;
-  }
-}
-
 
 
