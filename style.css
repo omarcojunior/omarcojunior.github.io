@@ -797,3 +797,29 @@ body {
   border-top-left-radius: 24px;  /* opcional para suavizar */
   border-top-right-radius: 24px; /* opcional para suavizar */
 }
+
+
+/* ========================
+   RESPONSIVIDADE - MOBILE
+======================== */
+@media (max-width: 768px) {
+  .projeto-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .projeto-img img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .projeto-info {
+    padding: 0;
+    text-align: center;
+  }
+
+  .projeto-tech {
+    justify-content: center;
+  }
+}
