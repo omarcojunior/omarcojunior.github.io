@@ -825,9 +825,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .slider-wrapper {
-    flex-direction: column;
-  }
+
 
   .projeto-card {
     flex-direction: column;
