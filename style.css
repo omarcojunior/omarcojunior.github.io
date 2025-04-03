@@ -803,29 +803,9 @@ body {
    RESPONSIVIDADE - MOBILE
 ======================== */
 @media (max-width: 768px) {
-  .projeto-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
+  .slider-wrapper {
+    padding: 0 16px; /* Espaçamento lateral no mobile */
   }
-
-  .projeto-img img {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .projeto-info {
-    padding: 0;
-    text-align: center;
-  }
-
-  .projeto-tech {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-
 
   .projeto-card {
     flex-direction: column;
@@ -833,10 +813,16 @@ body {
     text-align: center;
   }
 
+  .projeto-img {
+    justify-content: center;
+    margin-bottom: 20px;
+    display: flex;
+  }
+
   .projeto-img img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 0;
   }
 
   .projeto-info {
@@ -851,5 +837,11 @@ body {
   .projeto-info p {
     font-size: 1rem;
   }
+
+  .projeto-tech {
+    justify-content: center;
+  }
 }
+
+
 
